@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-main: linear-gradient(135deg, #5ac8fa, #a0e7ff); /* light blue gradient */
+  --bg-card: rgba(175, 230, 255, 0.3); /* semi-transparent blue for cards */
+  --accent: #00aeff;       /* main light blue */
+  --accent-light: #a0e7ff; /* lighter blue */
+  --dark: #2b2b2b;
+}
+
+body {
+  /* Background gradient + image */
+  background: var(--bg-main);
+  background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/disp/9bc27292880429.5e569ff84e4d0.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+
+  font-family: 'Poppins', sans-serif;
+  padding: 40px;
+  animation: fadeIn 1.2s ease;
+  position: relative;
+  overflow-x: hidden;
+  color: white; /* default text color white */
+}
+
+/* FLOATING BACKGROUND SHAPES */
+.bg-shapes span {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: -1;
+}
+
+.bg-shapes span:nth-child(1) {
+  top: -80px;
+  left: -80px;
+}
+
+.bg-shapes span:nth-child(2) {
+  bottom: 100px;
+  right: -100px;
+}
+
+.bg-shapes span:nth-child(3) {
+  top: 40%;
+  left: 60%;
+}
+
+/* MAIN CARD */
+.resume {
+  max-width: 1000px;
+  margin: auto;
+  background: var(--bg-card); /* semi-transparent light blue */
+  display: grid;
+  grid-template-columns: 35% 65%;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.25);
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+/* LEFT PANEL */
+.left {
+  padding: 40px;
+  background: linear-gradient(180deg, #a0e7ff, #5ac8fa); /* light blue gradient */
+  color: white; /* left panel text white */
+}
+
+.name {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  animation: slideLeft 1s ease;
+  color: white; /* name text white */
+}
+
+.name span {
+  color: var(--accent);
+}
+
+.photo {
+  margin: 30px 0;
+  border-radius: 25px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.photo img {
+  width: 100%;
+}
+
+.photo:hover {
+  transform: scale(1.07) rotate(-1deg);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+}
+
+.contact p {
+  font-size: 14px;
+  margin-bottom: 8px;
+  opacity: 0.85;
+  color: white;
+}
+
+.role {
+  margin-top: 40px;
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  color: white; /* role text white */
+  letter-spacing: 2px;
+}
+
+/* RIGHT PANEL */
+.right {
+  padding: 40px;
+  color: white; /* all text in right panel white */
+}
+
+.right h3 {
+  color: white; /* section titles white */
+}
+
+.right p,
+.right ul,
+.right li {
+  color: white; /* paragraphs, lists white */
+}
+
+/* EXPERIENCE TIMELINE */
+.timeline {
+  position: relative;
+  padding-left: 25px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: var(--accent-light); /* blue line */
+  border-radius: 10px;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 18px;
+  width: 18px;
+  height: 18px;
+  background: var(--accent); /* blue dot */
+  border-radius: 50%;
+}
+
+/* CARDS */
+.card {
+  background: rgba(175, 230, 255, 0.3); /* semi-transparent blue */
+  padding: 18px;
+  border-radius: 18px;
+  margin-bottom: 20px;
+  transition: all 0.35s ease;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white; /* card text white */
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  background: rgba(175, 230, 255, 0.45); /* slightly brighter on hover */
+}
+
+.title,
+.date {
+  color: white; /* card title and date white */
+}
+
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.skills-grid li {
+  background: rgba(255,255,255,0.1);
+  padding: 8px 14px;
+  border-radius: 50px;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  color: white; /* skills text white */
+}
+
+.skills-grid li:hover {
+  background: var(--accent);
+  color: white;
+  transform: scale(1.08);
+}
+
+/* TEXT */
+p {
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: 0.9;
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+/* REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}

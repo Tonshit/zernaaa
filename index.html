@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Le Nguyen Ngoc Tram – Graphic Designer</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="tonshit.css">
+</head>
+<body>
+
+<div class="resume">
+
+  <!-- LEFT COLUMN -->
+  <div class="left">
+    <h1 class="name">
+      VINCENT BLEZ<br>
+      <span>TUBIGON ZERNA</span>
+    </h1>
+
+    <div class="photo">
+      <img src="503481111_1031933115699018_4373630354164823327_n.jpg" alt="Profile Photo">
+    </div>
+
+    <div class="contact">
+      <p><strong>Phone:</strong> (+69) 39631366522</p>
+      <p><strong>Email:</strong> vincentblez2004@gmail.com</p>
+      <p><strong>Instagram:</strong> blezzz.tons</p>
+      <p><strong>Facebook:</strong> Vincent Blez</p>
+      <p><strong>Behance:</strong> behance.net/zerna6738</p>
+    </div>
+
+    <h2 class="role">PERSONAL<br>PORTFOLIO</h2>
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="right">
+
+    <section class="reveal">
+      <h3>Personal</h3>
+      <p>
+        Hi! My name is Vincent Blez T. Zerna. You can call me Tonshit.
+        I am a graphic designer and a freelance illustrator based in Dumaguete City
+        with more than 3 years of experience.
+      </p>
+      <p>
+        I always focus on improving my skills, mindset, and creativity.
+        I am always prepared to do my best.
+      </p>
+    </section>
+
+    <section class="reveal">
+      <h3>Experience</h3>
+
+      <div class="item card reveal">
+        <span class="title">Creative Head – Main Committee</span>
+        <span class="date">Nov 2020 – Now</span>
+        <p>International Economics Faculty</p>
+      </div>
+
+      <div class="item card reveal">
+        <span class="title">Freelance Designer</span>
+        <span class="date">Nov 2023 – Dec 2023</span>
+        <p>Mr. Tri – Logistics A Bo Co</p>
+      </div>
+
+      <div class="item card reveal">
+        <span class="title">FPT School of Business & Technology</span>
+        <span class="date">Dec 2023 – Now</span>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <h3>Education</h3>
+      <p>
+        <strong>Colegio de San Francisco Javier</strong><br>
+        International Economics<br>
+        <span class="date">2021 – 2024</span>
+      </p>
+    </section>
+
+    <section class="skills reveal">
+      <h3>Skills</h3>
+      <div class="skills-grid">
+        <ul>
+          <li>Adobe Photoshop</li>
+          <li>Adobe Illustrator</li>
+          <li>Adobe After Effects</li>
+          <li>Adobe Premiere Pro</li>
+          <li>Microsoft PowerPoint</li>
+          <li>Microsoft Word</li>
+          <li>Microsoft Excel</li>
+        </ul>
+        <ul>
+          <li>Brand Identity</li>
+          <li>Visual Design</li>
+          <li>Layout</li>
+          <li>Image Making</li>
+          <li>Conceptualization</li>
+          <li>Time Management</li>
+          <li>Communication</li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<!-- ✅ JAVASCRIPT (SCROLL REVEAL) -->
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+
+  function revealOnScroll() {
+    reveals.forEach(el => {
+      const elementTop = el.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (elementTop < windowHeight - 100) {
+        el.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll(); // run on load
+</script>
+
+</body>
+</html>
